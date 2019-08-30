@@ -9,7 +9,7 @@
 回帰係数の大きさに罰則を課すことで係数の値を縮小させる。
 
 $$
-\hat{\beta}^{ridge} = \argmin_{\beta}\{\displaystyle \sum^{N}_{i=1}(y_i-\beta_0- \displaystyle \sum^{p}_{j=1}x_{ij}\beta_i)^2 + \lambda\sum^p_{j=1}\beta_j^2\}
+\hat{\beta}^{ridge} = \argmin_{\beta}\{ \sum^{N}_{i=1}(y_i - \beta_0 - \sum^{p}_{j=1}x_{ij}\beta_i)^2 + \lambda\sum^p_{j=1}\beta_j^2\}
 $$
 
 最適な係数$\hat{\beta}^{ridge}$は罰則付き残差二乗和の最小化により求められる。
@@ -19,8 +19,7 @@ $\lambda$は複雑度パラメータであり、大きくなると縮小度合�
 別な表現でのリッジ回帰が↓
 
 $$
-\hat{\beta}^{ridge} = \argmin_{\beta}\{\displaystyle \sum^{N}_{i=1}(y_i-\beta_0- \displaystyle \sum^p_{j=1}x_{ij}\beta_i)^2 \} \\
-
+\hat{\beta}^{ridge} = \argmin_{\beta}\{ \sum^{N}_{i=1}(y_i-\beta_0 - \sum^p_{j=1}x_{ij}\beta_i)^2 \} \\
 \text{subject to } \sum^p_{j=1}\beta_j^2\leq t
 $$
 
@@ -57,9 +56,7 @@ $d_j$ は$\bf X$の特異値と呼ばれる。
 
 $$
 \bf X  \hat{\beta}^{ridge} = {\bf X}(\bf X^T{\bf X}+\lambda\bf I)^{-1}\bf {X}^T{\bf y} \\
-
 = {\bf U}{\bf D}({\bf D}^2+\lambda{\bf I})^{-1}{\bf D}{\bf U}^T{\bf y} \\
-
 = \sum^p_{j=1}{{\bf u}_j\frac{d_j^2}{d_j^2 + \lambda}{\bf u}_j^T{\bf y}}
 $$
 
